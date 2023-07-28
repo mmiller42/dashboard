@@ -1,0 +1,73 @@
+.root {
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.activeButton {
+  transform: scale(1.15);
+  animation: scaleAnimation 0.75s ease;
+}
+
+.icon {
+  flex: 1;
+  display: flex;
+  transition: color 0.5s ease;
+}
+
+.icon :global(svg) {
+  width: 100%;
+  height: 100%;
+}
+
+.label {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.activeButton .label {
+  font-weight: 700;
+  color: white;
+}
+
+.activeButton.onButton .icon {
+  color: green;
+}
+
+.activeButton.onButton.alarmed .icon {
+  color: #ba3636;
+}
+
+.onButton :global(.checkmarkBackground) {
+  display: none;
+}
+
+.activeButton.onButton :global(.checkmarkBackground) {
+  display: block;
+}
+
+.activeButton.offButton .icon {
+  color: #aaa;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}

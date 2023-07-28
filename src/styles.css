@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #222;
+  color: white;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
