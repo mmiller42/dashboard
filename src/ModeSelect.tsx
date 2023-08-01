@@ -5,6 +5,8 @@ import { OnIcon } from "./OnIcon";
 import { AlarmIcon } from "./AlarmIcon";
 import { Spinner } from "./Spinner";
 
+console.log(styles);
+
 export type Mode = "on" | "off";
 export type State = "normal" | "alarmed" | "pending";
 

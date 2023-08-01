@@ -332,32 +332,4 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-  font-family: Josefin Sans, sans-serif;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  color: #fff;
-  background-color: #222;
-}
-
-#rooter {
-  width: 480px;
-  height: 800px;
-}
-
-#root {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
 /*# sourceMappingURL=index.7b48278b.css.map */

@@ -2,7 +2,6 @@ import { Keypad } from "./Keypad";
 import { ErrorModal, LoadingModal, Modal } from "./Modal";
 import { emitError, useWatchError } from "./ErrorContext";
 import { Mode, ModeSelect, State } from "./ModeSelect";
-import "./styles.css";
 import { memo, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchInfo, updateMode } from "./api";

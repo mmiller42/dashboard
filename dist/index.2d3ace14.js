@@ -27179,7 +27179,6 @@ var _keypad = require("./Keypad");
 var _modal = require("./Modal");
 var _errorContext = require("./ErrorContext");
 var _modeSelect = require("./ModeSelect");
-var _stylesCss = require("./styles.css");
 var _react = require("react");
 var _reactDom = require("react-dom");
 var _api = require("./api");
@@ -27203,7 +27202,7 @@ const RootErrorModal = /*#__PURE__*/ (0, _react.memo)(_s(function RootErrorModal
         error: error?.error
     }, void 0, false, {
         fileName: "src/App.tsx",
-        lineNumber: 24,
+        lineNumber: 23,
         columnNumber: 5
     }, this), document.getElementById("modal-root"));
 }, "XVMv+e/9LvhCW9jtg/fyh6c3w3g=", false, function() {
@@ -27261,7 +27260,7 @@ const App = /*#__PURE__*/ _s1((0, _react.memo)(_c1 = _s1(function App() {
                 state: state
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 64,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modal.Modal), {
@@ -27289,24 +27288,24 @@ const App = /*#__PURE__*/ _s1((0, _react.memo)(_c1 = _s1(function App() {
                     length: 4
                 }, void 0, false, {
                     fileName: "src/App.tsx",
-                    lineNumber: 96,
+                    lineNumber: 95,
                     columnNumber: 9
                 }, this)
             }, view, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 89,
+                lineNumber: 88,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modal.LoadingModal), {
                 loading: loading
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 117,
+                lineNumber: 116,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RootErrorModal, {}, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 118,
+                lineNumber: 117,
                 columnNumber: 7
             }, this)
         ]
@@ -27324,7 +27323,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Keypad":"7xMrb","./Modal":"7zlcS","./ErrorContext":"gXU0A","./ModeSelect":"goTOr","./styles.css":"lW6qc","react":"21dqq","react-dom":"j6uA9","./api":"1w4TK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7xMrb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Keypad":"7xMrb","./Modal":"7zlcS","./ErrorContext":"gXU0A","./ModeSelect":"goTOr","react":"21dqq","react-dom":"j6uA9","./api":"1w4TK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7xMrb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c749 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29534,7 +29533,7 @@ $RefreshReg$(_c8, "LoadingModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Spinner":"a1Lqf","./Modal.module.css":"8mpYj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"a1Lqf":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Spinner":"a1Lqf","./Modal.module.css":"8mpYj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"a1Lqf":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b08a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29751,6 +29750,7 @@ var _offIcon = require("./OffIcon");
 var _onIcon = require("./OnIcon");
 var _alarmIcon = require("./AlarmIcon");
 var _spinner = require("./Spinner");
+console.log((0, _modeSelectModuleCssDefault.default));
 const ModeButton = /*#__PURE__*/ (0, _react.memo)(function ModeButton({ active, mode, onClick, activeText, inactiveText, className, icon }) {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
         value: mode,
@@ -29762,7 +29762,7 @@ const ModeButton = /*#__PURE__*/ (0, _react.memo)(function ModeButton({ active, 
                 children: icon
             }, void 0, false, {
                 fileName: "src/ModeSelect.tsx",
-                lineNumber: 38,
+                lineNumber: 40,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -29770,13 +29770,13 @@ const ModeButton = /*#__PURE__*/ (0, _react.memo)(function ModeButton({ active, 
                 children: active ? activeText : inactiveText
             }, void 0, false, {
                 fileName: "src/ModeSelect.tsx",
-                lineNumber: 39,
+                lineNumber: 41,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/ModeSelect.tsx",
-        lineNumber: 31,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 });
@@ -29795,7 +29795,7 @@ const ModeSelect = /*#__PURE__*/ (0, _react.memo)(_c1 = function ModeSelect({ mo
                 icon: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _offIcon.OffIcon), {}, void 0, false, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/ModeSelect.tsx",
-                lineNumber: 57,
+                lineNumber: 59,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ModeButton, {
@@ -29814,13 +29814,13 @@ const ModeSelect = /*#__PURE__*/ (0, _react.memo)(_c1 = function ModeSelect({ mo
                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _onIcon.OnIcon), {}, void 0, false, void 0, void 0)
             }, void 0, false, {
                 fileName: "src/ModeSelect.tsx",
-                lineNumber: 66,
+                lineNumber: 68,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/ModeSelect.tsx",
-        lineNumber: 56,
+        lineNumber: 58,
         columnNumber: 5
     }, this);
 });
@@ -29835,7 +29835,7 @@ $RefreshReg$(_c2, "ModeSelect");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./ModeSelect.module.css":"f0XlF","./OffIcon":"3uZTH","./OnIcon":"dXhpb","./AlarmIcon":"jBVbm","./Spinner":"a1Lqf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"f0XlF":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ModeSelect.module.css":"f0XlF","./OffIcon":"3uZTH","./OnIcon":"dXhpb","./AlarmIcon":"jBVbm","./Spinner":"a1Lqf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"f0XlF":[function(require,module,exports) {
 module.exports["activeButton"] = `cCiXQq_activeButton`;
 module.exports["alarmed"] = `cCiXQq_alarmed`;
 module.exports["button"] = `cCiXQq_button`;
@@ -29907,7 +29907,7 @@ $RefreshReg$(_c1, "OffIcon");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"dXhpb":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dXhpb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb92 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -29972,7 +29972,7 @@ $RefreshReg$(_c1, "OnIcon");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"jBVbm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jBVbm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$43b9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30022,7 +30022,7 @@ $RefreshReg$(_c1, "AlarmIcon");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"lW6qc":[function() {},{}],"1w4TK":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1w4TK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "updateMode", ()=>updateMode);
