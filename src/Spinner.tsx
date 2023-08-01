@@ -1,5 +1,5 @@
 import { memo } from "react";
-import * as styles from "./Spinner.module.css";
+import styles from "./Spinner.module.css";
 
 type SpinnerProps = {
   blowUp?: boolean | undefined;

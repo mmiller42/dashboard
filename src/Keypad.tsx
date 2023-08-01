@@ -1,7 +1,7 @@
 import { ReactNode, memo, useEffect, useRef, useState } from "react";
 import { isEqual, range } from "lodash-es";
 
-import * as styles from "./Keypad.module.css";
+import styles from "./Keypad.module.css";
 
 type KeyProps = {
   value: KeypadKey;

@@ -1,5 +1,5 @@
 import { memo, ReactElement } from "react";
-import * as styles from "./ModeSelect.module.css";
+import styles from "./ModeSelect.module.css";
 import { OffIcon } from "./OffIcon";
 import { OnIcon } from "./OnIcon";
 import { AlarmIcon } from "./AlarmIcon";
