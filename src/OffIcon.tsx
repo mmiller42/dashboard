@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const offIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
     <g transform="matrix(0.9,0,0,0.9,0.7000500000000001,0.6999869503528569)">
@@ -13,6 +15,6 @@ const offIcon = (
   </svg>
 );
 
-export function OffIcon() {
+export const OffIcon = memo(function OffIcon() {
   return offIcon;
-}
+});

@@ -1,7 +1,7 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, memo, useEffect, useRef, useState } from "react";
 import { isEqual, range } from "lodash-es";
 
-import styles from "./Keypad.module.css";
+import * as styles from "./Keypad.module.css";
 
 type KeyProps = {
   value: KeypadKey;
@@ -10,7 +10,12 @@ type KeyProps = {
   children?: ReactNode | undefined;
 };
 
-function Key({ value, onClick, className = "", children }: KeyProps) {
+const Key = memo(function Key({
+  value,
+  onClick,
+  className = "",
+  children,
+}: KeyProps) {
   return (
     <button
       type="button"
@@ -21,13 +26,13 @@ function Key({ value, onClick, className = "", children }: KeyProps) {
       {children === undefined ? value : children}
     </button>
   );
-}
+});
 
 type CloseKeyProps = {
   onClick: () => void;
 };
 
-function CloseKey({ onClick }: CloseKeyProps) {
+const CloseKey = memo(function CloseKey({ onClick }: CloseKeyProps) {
   return (
     <button
       type="button"
@@ -37,7 +42,7 @@ function CloseKey({ onClick }: CloseKeyProps) {
       ╳
     </button>
   );
-}
+});
 
 type KeypadDigit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
 
@@ -48,7 +53,7 @@ type KeysProps = {
   onClose: () => void;
 };
 
-function Keys({ onClick, onClose }: KeysProps) {
+const Keys = memo(function Keys({ onClick, onClose }: KeysProps) {
   return (
     <div className={styles.keys}>
       <div className={styles.row}>
@@ -79,14 +84,14 @@ function Keys({ onClick, onClose }: KeysProps) {
       </div>
     </div>
   );
-}
+});
 
 type MaskProps = {
   value: string;
   length: number;
 };
 
-function Mask({ value, length }: MaskProps) {
+const Mask = memo(function Mask({ value, length }: MaskProps) {
   const prevRef = useRef(value);
   const [revealLast, setRevealLast] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -143,7 +148,7 @@ function Mask({ value, length }: MaskProps) {
       })}
     </div>
   );
-}
+});
 
 export type KeypadProps = {
   length: number;
@@ -152,7 +157,7 @@ export type KeypadProps = {
   initialValue?: string | undefined;
 };
 
-export function Keypad({
+export const Keypad = memo(function Keypad({
   initialValue = "",
   length,
   onSubmit,
@@ -189,4 +194,4 @@ export function Keypad({
       />
     </div>
   );
-}
+});

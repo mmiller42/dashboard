@@ -1,18 +1,27 @@
-import styles from "./Spinner.module.css";
+import { memo } from "react";
+import * as styles from "./Spinner.module.css";
 
-const spinner = (
-  <div className={styles.root}>
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-    <div className={styles.chunk} />
-  </div>
-);
+type SpinnerProps = {
+  blowUp?: boolean | undefined;
+  className?: string | undefined;
+};
 
-export function Spinner() {
-  return spinner;
-}
+export const Spinner = memo(function Spinner({
+  blowUp = true,
+  className = "",
+}: SpinnerProps) {
+  return (
+    <div
+      className={`${styles.root} ${blowUp ? styles.blowUp : ""} ${className}`}
+    >
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+      <div className={styles.chunk} />
+    </div>
+  );
+});

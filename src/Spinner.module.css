@@ -3,6 +3,9 @@
   position: relative;
   width: 80px;
   height: 80px;
+}
+
+.blowUp {
   transform: scale(3);
 }
 

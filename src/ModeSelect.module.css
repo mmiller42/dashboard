@@ -1,21 +1,27 @@
 .root {
-  height: 500px;
+  height: 800px;
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  align-items: center;
+  gap: 50px;
 }
 
 .button {
+  cursor: pointer;
   background: none;
   border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.5s ease;
+  height: 400px;
+  width: 100%;
+  transform: scale(0.8695652174);
+  padding: 0;
 }
 
 .activeButton {
-  transform: scale(1.15);
+  transform: scale(1);
   animation: scaleAnimation 0.75s ease;
 }
 
@@ -25,14 +31,16 @@
   transition: color 0.5s ease;
 }
 
-.icon :global(svg) {
+.button .icon :global(svg) {
   width: 100%;
   height: 100%;
 }
 
 .label {
-  font-size: 48px;
+  font-size: 38px;
   text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .activeButton .label {
@@ -46,6 +54,26 @@
 
 .activeButton.onButton.alarmed .icon {
   color: #ba3636;
+}
+
+.pending .icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pendingSpinner {
+  display: relative;
+  top: 40px;
+  transform: scale(2);
+}
+
+.spinnerContainer {
+  height: 160px;
+  width: 160px;
+  background-color: #03b6fc;
+  border-radius: 100%;
+  transform: scale(1.2);
 }
 
 .onButton :global(.checkmarkBackground) {
@@ -62,12 +90,12 @@
 
 @keyframes scaleAnimation {
   0% {
-    transform: scale(1);
+    transform: scale(0.8695652174);
   }
   75% {
-    transform: scale(1.25);
+    transform: scale(1.1);
   }
   100% {
-    transform: scale(1.15);
+    transform: scale(1);
   }
 }

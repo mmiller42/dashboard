@@ -45,6 +45,11 @@ export async function fetchInfo(): Promise<AlarmInfo> {
 
   return {
     mode: data.metrics.level === "off" ? "off" : "on",
-    state: data.metrics.level === "alarmed" ? "alarmed" : "normal",
+    state:
+      data.metrics.level === "alarmed"
+        ? "alarmed"
+        : data.metrics.level === "pending"
+        ? "pending"
+        : "normal",
   };
 }

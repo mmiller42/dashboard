@@ -3,11 +3,11 @@ import { ErrorModal, LoadingModal, Modal } from "./Modal";
 import { emitError, useWatchError } from "./ErrorContext";
 import { Mode, ModeSelect, State } from "./ModeSelect";
 import "./styles.css";
-import { useCallback, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchInfo, updateMode } from "./api";
 
-function RootErrorModal() {
+const RootErrorModal = memo(function RootErrorModal() {
   const error = useWatchError();
 
   const [open, setOpen] = useState(Boolean(error));
@@ -22,11 +22,11 @@ function RootErrorModal() {
 
   return createPortal(
     <ErrorModal open={open} onClose={handleClose} error={error?.error} />,
-    document.getElementById("modal-root")!,
+    document.getElementById("modal-root")!
   );
-}
+});
 
-export default function App() {
+const App = memo(function App() {
   const [view, setView] = useState<"mode" | "keypad">("mode");
   const [mode, setMode] = useState<Mode>("off");
   const [state, setState] = useState<State>("normal");
@@ -59,7 +59,6 @@ export default function App() {
     };
   }, []);
 
-  console.log("mode:", mode);
   return (
     <>
       <ModeSelect
@@ -119,4 +118,6 @@ export default function App() {
       <RootErrorModal />
     </>
   );
-}
+});
+
+export default App;

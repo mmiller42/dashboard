@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const alarmIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
     <g>
@@ -11,6 +13,6 @@ const alarmIcon = (
   </svg>
 );
 
-export function AlarmIcon() {
+export const AlarmIcon = memo(function AlarmIcon() {
   return alarmIcon;
-}
+});

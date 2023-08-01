@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const onIcon = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
     <ellipse
@@ -20,6 +22,6 @@ const onIcon = (
   </svg>
 );
 
-export function OnIcon() {
+export const OnIcon = memo(function OnIcon() {
   return onIcon;
-}
+});

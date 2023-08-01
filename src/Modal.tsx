@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import { Spinner } from "./Spinner";
-import styles from "./Modal.module.css";
+import * as styles from "./Modal.module.css";
+import { AxiosError } from "axios";
 
 type ModalProps = {
   children?: ReactNode | undefined;
@@ -9,7 +10,7 @@ type ModalProps = {
   className?: string | undefined;
 };
 
-export function BaseModal({
+export const BaseModal = memo(function BaseModal({
   children = null,
   open,
   onClose,
@@ -32,22 +33,25 @@ export function BaseModal({
       </div>
     </div>
   );
-}
+});
 
 type SpinnerModalProps = {
   open: boolean;
   onClose: () => void;
 };
 
-export function SpinnerModal({ open, onClose }: SpinnerModalProps) {
+export const SpinnerModal = memo(function SpinnerModal({
+  open,
+  onClose,
+}: SpinnerModalProps) {
   return (
     <BaseModal open={open} onClose={onClose}>
       <Spinner />
     </BaseModal>
   );
-}
+});
 
-export function Modal({
+export const Modal = memo(function Modal({
   children,
   open,
   onClose,
@@ -64,7 +68,7 @@ export function Modal({
       </div>
     </BaseModal>
   );
-}
+});
 
 type ErrorModalProps = {
   error: unknown;
@@ -72,24 +76,34 @@ type ErrorModalProps = {
   onClose: () => void;
 };
 
-export function ErrorModal({ error, open, onClose }: ErrorModalProps) {
+export const ErrorModal = memo(function ErrorModal({
+  error,
+  open,
+  onClose,
+}: ErrorModalProps) {
+  const message =
+    (error as AxiosError<{ error: string }>)?.response?.data?.error ??
+    (error as Error)?.message ??
+    String(error);
   return (
     <BaseModal open={open} onClose={onClose}>
       <div className={`${styles.content} ${open ? styles.contentOpen : null}`}>
-        {String(error)}
+        {message}
       </div>
     </BaseModal>
   );
-}
+});
 
 type LoadingModalProps = {
   loading: boolean;
 };
 
-export function LoadingModal({ loading }: LoadingModalProps) {
+export const LoadingModal = memo(function LoadingModal({
+  loading,
+}: LoadingModalProps) {
   return (
     <BaseModal open={loading} onClose={() => {}}>
       <Spinner />
     </BaseModal>
   );
-}
+});

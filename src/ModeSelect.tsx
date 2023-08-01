@@ -1,11 +1,12 @@
-import { ReactElement } from "react";
-import styles from "./ModeSelect.module.css";
+import { memo, ReactElement } from "react";
+import * as styles from "./ModeSelect.module.css";
 import { OffIcon } from "./OffIcon";
 import { OnIcon } from "./OnIcon";
 import { AlarmIcon } from "./AlarmIcon";
+import { Spinner } from "./Spinner";
 
 export type Mode = "on" | "off";
-export type State = "normal" | "alarmed";
+export type State = "normal" | "alarmed" | "pending";
 
 type ModeButtonProps = {
   active: boolean;
@@ -17,7 +18,7 @@ type ModeButtonProps = {
   icon: ReactElement;
 };
 
-function ModeButton({
+const ModeButton = memo(function ModeButton({
   active,
   mode,
   onClick,
@@ -38,7 +39,7 @@ function ModeButton({
       <span className={styles.label}>{active ? activeText : inactiveText}</span>
     </button>
   );
-}
+});
 
 type ModeSelectProps = {
   mode: Mode;
@@ -46,7 +47,11 @@ type ModeSelectProps = {
   onClick: (mode: Mode) => void;
 };
 
-export function ModeSelect({ mode, state, onClick }: ModeSelectProps) {
+export const ModeSelect = memo(function ModeSelect({
+  mode,
+  state,
+  onClick,
+}: ModeSelectProps) {
   return (
     <div className={styles.root}>
       <ModeButton
@@ -65,10 +70,24 @@ export function ModeSelect({ mode, state, onClick }: ModeSelectProps) {
         activeText="Armed"
         inactiveText="Arm"
         className={`${styles.onButton} ${
-          state === "alarmed" ? styles.alarmed : ""
+          state === "alarmed"
+            ? styles.alarmed
+            : state === "pending"
+            ? styles.pending
+            : ""
         }`}
-        icon={state === "alarmed" ? <AlarmIcon /> : <OnIcon />}
+        icon={
+          state === "alarmed" ? (
+            <AlarmIcon />
+          ) : state === "pending" ? (
+            <div className={styles.spinnerContainer}>
+              <Spinner blowUp={false} className={styles.pendingSpinner} />
+            </div>
+          ) : (
+            <OnIcon />
+          )
+        }
       />
     </div>
   );
-}
+});
