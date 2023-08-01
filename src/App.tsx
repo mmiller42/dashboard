@@ -87,7 +87,6 @@ const App = memo(function App() {
       />
       <Modal
         key={view} // reset state when closing
-        className="autoWidth"
         open={view === "keypad"}
         onClose={() => setView("mode")}
         autoWidth

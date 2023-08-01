@@ -29,7 +29,7 @@
 }
 
 .contentOpen {
-  transform: scale(1.2);
+  transform: scale(1.15);
   opacity: 1;
   animation: scaleModal 0.5s ease;
 }
